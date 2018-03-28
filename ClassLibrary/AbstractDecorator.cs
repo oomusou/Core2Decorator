@@ -1,14 +1,16 @@
-﻿namespace ClassLibrary
+﻿using System;
+
+namespace ClassLibrary
 {
-    public abstract class AbstractDecorator : ComponentInterface
+    public abstract class AbstractDecorator : ComponentInterface, DecorateInterface
     {
         protected ComponentInterface _component;
         
-        protected AbstractDecorator(ComponentInterface component)
+        public abstract void Operation();
+        public ComponentInterface Decorate(ComponentInterface component)
         {
             _component = component;
+            return this;
         }
-
-        public abstract void Operation();
     }
 }
