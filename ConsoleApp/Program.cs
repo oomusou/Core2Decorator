@@ -1,4 +1,5 @@
-﻿using ClassLibrary;
+﻿using System;
+using ClassLibrary;
 
 namespace ConsoleApp
 {
@@ -6,10 +7,11 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            ComponentInterface c = new ConcreteComponent();
-            var d1 = new ConcreteDecorator1().Decorate(c);
-            var d2 = new ConcreteDecorator2().Decorate(d1);
-            d2.Operation();
+            OperationDelegate operation = Component.Operation;
+            OperationDelegate operation1 = Decorators.Operation1(operation);
+            OperationDelegate operation2 = Decorators.Operation2(operation1);
+
+            operation2();
         }
     }
 }

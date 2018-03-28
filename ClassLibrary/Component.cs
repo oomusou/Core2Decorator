@@ -2,9 +2,9 @@
 
 namespace ClassLibrary
 {
-    public class ConcreteComponent : ComponentInterface
+    public static class Component
     {
-        public void Operation()
+        public static void Operation()
         {
             Console.WriteLine("ConcreteComponent Operation");
         }
