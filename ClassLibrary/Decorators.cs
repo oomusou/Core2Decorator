@@ -4,7 +4,7 @@ namespace ClassLibrary
 {
     public static class Decorators
     {
-        public static OperationDelegate Operation1(OperationDelegate operation)
+        public static Action Operation1(Action operation)
         {
             return () => 
             {
@@ -13,16 +13,13 @@ namespace ClassLibrary
             };
         }
 
-        public static OperationDelegate Operation2(OperationDelegate operation)
+        public static Action Operation2(Action operation)
         {
             return () =>
             {
                 operation();
                 Console.WriteLine("ConcreateDecorator2 add behavior");
             };
-            
-            
         }
-
     }
 }

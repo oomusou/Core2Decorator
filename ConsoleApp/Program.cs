@@ -7,9 +7,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            OperationDelegate operation = Component.Operation;
-            OperationDelegate operation1 = Decorators.Operation1(operation);
-            OperationDelegate operation2 = Decorators.Operation2(operation1);
+            Action operation = Component.Operation;
+            Action operation1 = Decorators.Operation1(operation);
+            Action operation2 = Decorators.Operation2(operation1);
 
             operation2();
         }
